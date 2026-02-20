@@ -153,7 +153,7 @@ By combining structured data engineering, cohort retention analysis, and unsuper
 
 ## 🚀 How to Run
 
-1. Clone the repository:
+1. Clone the repository: https://github.com/s3achan/ecommerce-customer-segmentation
 2. Install required libraries: pip install pandas numpy matplotlib seaborn scikit-learn
 3. Launch the notebook: jupyter notebook EcommerceDataset.ipynb
 4. Run all cells sequentially.
