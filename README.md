@@ -1,167 +1,105 @@
-# 🛍️ E-Commerce Customer Analytics & Clustering Project
+# 🛒 E-Commerce Cancellation & Customer Segmentation Analysis
 
 ## 📌 Project Overview
 
-This project analyzes real-world e-commerce transaction data to uncover customer purchasing behavior, revenue patterns, and actionable business insights.
+This project analyzes customer behavior and cancellation patterns using the Kaggle E-Commerce dataset.  
+The goal is to identify key drivers of cancellations, quantify revenue impact, and segment high-risk customers to support data-driven business decisions.
 
-The analysis combines:
+---
 
-- 🧹 Data Cleaning & Preprocessing  
-- 📊 Exploratory Data Analysis (EDA)  
-- 👥 Cohort Analysis  
-- 🎯 Customer Segmentation using K-Means Clustering  
-- 📈 Executive-Level Business Insights  
+## 🎯 Objectives
 
-The goal is to transform raw transaction-level data into strategic intelligence that supports marketing optimization, retention strategy, and revenue growth decisions.
+- Analyze overall cancellation rate
+- Quantify revenue lost due to cancellations
+- Identify high-risk products and customer segments
+- Explore customer behavior patterns
+- Build actionable business insights from transactional data
+
+---
+
+## 📊 Key Metrics Analyzed
+
+- **Overall Cancellation Rate**
+- **Revenue Lost from Cancellations**
+- **Top Products by Cancellation Count**
+- **Top Products by Revenue Impact**
+- **Customer-Level Cancellation Rate**
+- **Segment-Based Cancellation Trends**
+
+---
+
+## 📈 Sample Insights
+
+- A small subset of products drives a disproportionate share of cancellation impact.
+- Certain customer segments exhibit significantly higher cancellation rates.
+- Revenue-weighted cancellation analysis provides stronger business insight than raw counts.
+- High-value customers with frequent cancellations may require targeted retention strategies.
+
+---
+
+## 🛠️ Tools & Technologies
+
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-Learn (for segmentation & modeling)
 
 ---
 
 ## 📂 Dataset
 
-**Source:** Public UK-based Online Retail Dataset  
+Source: [Kaggle – E-Commerce Data](https://www.kaggle.com/datasets/carrie1/ecommerce-data)
 
-The dataset contains:
-
-- Invoice-level transactions  
-- Product descriptions  
-- Quantities purchased  
-- Unit prices  
-- Customer IDs  
-- Country information  
-- Invoice dates  
+The dataset contains transactional-level order data including:
+- Customer ID
+- Product / Stock Code
+- Quantity
+- Price
+- Invoice Information
+- Cancellation Indicators
 
 ---
 
-## 🛠️ Tech Stack
+## 🔎 Analysis Workflow
 
-- Python  
-- Pandas  
-- NumPy  
-- Matplotlib  
-- Seaborn  
-- Scikit-learn  
-- Jupyter Notebook  
-
----
-
-## 🔎 Project Workflow
-
-### 1️⃣ Data Cleaning & Preparation
-
-- Removed null `CustomerID` values  
-- Filtered out negative quantities (returns)  
-- Converted `InvoiceDate` to datetime format  
-- Created derived features:
-  - `Revenue = Quantity × UnitPrice`
-  - Purchase Month
-  - Customer-level aggregates  
+1. Data Cleaning & Preprocessing  
+2. Feature Engineering (Total Price, Cancellation Flags)  
+3. Exploratory Data Analysis (EDA)  
+4. Cancellation Rate & Revenue Impact Analysis  
+5. Customer-Level Behavioral Segmentation  
+6. Visualization & Business Interpretation  
 
 ---
 
-### 2️⃣ Exploratory Data Analysis (EDA)
+## 💡 Business Value
 
-Key analyses performed:
+This analysis helps answer:
 
-- Revenue by country  
-- Unique customers by geography  
-- Monthly revenue trends  
-- Top revenue-generating products  
-- Customer purchase frequency distribution  
-
-Visualizations include:
-
-- Bar charts  
-- Line charts with markers  
-- Pie charts  
-- Distribution plots  
-- Revenue trends over time  
+- Which products contribute most to cancellation revenue loss?
+- Which customer segments are high-risk?
+- What is the financial impact of cancellations?
+- Where should retention strategies be prioritized?
 
 ---
 
-### 3️⃣ Cohort Analysis
+## 📊 Example Visualization
 
-Cohort analysis was performed to evaluate customer retention patterns:
-
-- Grouped customers by first purchase month  
-- Tracked repeat purchase behavior over time  
-- Identified churn and retention trends  
-
-This analysis answers:
-
-- Are customers returning?
-- How long do customers remain active?
-- Which acquisition months generate the highest retention?
+- Confusion Matrix (if predictive model applied)
+- Revenue Impact Bar Charts
+- Cancellation Distribution Charts
+- Segment-Level Risk Heatmaps
 
 ---
 
-### 4️⃣ Customer Segmentation (K-Means Clustering)
+## 🚀 Future Improvements
 
-Customer-level features engineered:
-
-- Total Revenue  
-- Purchase Frequency  
-- Recency  
-- Average Order Value  
-
-Steps:
-
-1. Feature scaling using `StandardScaler`
-2. Applied `KMeans` clustering
-3. Visualized clusters with centroids
-4. Interpreted segment behaviors
-
-#### 🏷️ Segment Naming
-
-Clusters were renamed for business clarity:
-
-- **VIP - High-Value Loyal Customers**
-- **Regular- Low-Engagement Occasional Buyers**
-
-Segments were defined based on revenue contribution and engagement levels.
+- Build predictive cancellation model
+- Revenue-weighted churn scoring
+- Time-series cancellation forecasting
+- Customer lifetime value analysis
+- Risk-based intervention strategies
 
 ---
 
-## 📊 Key Business Insights
-
-- A small percentage of customers generate a disproportionate share of revenue (Pareto effect).
-- The UK dominates overall customer distribution.
-- Retention declines after first purchase for certain cohorts.
-- High-value customers demonstrate both high purchase frequency and higher average order value.
-- Behavioral segmentation enables targeted marketing strategies.
-
----
-
-## 💼 Business Applications
-
-This analysis can support:
-
-- 🎯 Targeted marketing campaigns  
-- 💰 Revenue optimization  
-- 📉 Churn reduction strategies  
-- 📦 Inventory forecasting  
-- 📊 Executive performance dashboards  
-
----
-
-## 📈 Executive Summary
-
-This project demonstrates how transaction-level data can be transformed into actionable customer intelligence.
-
-By combining structured data engineering, cohort retention analysis, and unsupervised machine learning, the project converts raw e-commerce activity into business-driven insights that support strategic growth decisions.
-
----
-
-## 🚀 How to Run
-
-1. Clone the repository: https://github.com/s3achan/ecommerce-customer-segmentation
-2. Install required libraries: pip install pandas numpy matplotlib seaborn scikit-learn
-3. Launch the notebook: jupyter notebook EcommerceDataset.ipynb
-4. Run all cells sequentially.
-
-## 🔮 Future Enhancements
-
-- Implement RFM scoring model  
-- Compare with DBSCAN clustering  
-- Build interactive dashboard (Streamlit / Power BI)  
-- Apply anomaly detection for fraud analysis  
-- Develop revenue forecasting models  
